@@ -1,0 +1,83 @@
+
+
+
+@mixin liststyle($theme:color,$theme:white) {
+    border-radius: 10px;
+    padding: 10px 50px;
+    color: $theme;
+    font-weight: bold;
+}
+$color:red;        //variabhle
+
+//math
+
+
+.class-selector{
+    background-color: lightgreen;
+    @include liststyle($theme:white);
+    
+    
+}
+.class-selector li{
+    font-size: 16px;
+    transition: font-size 2s;
+}
+.class-selector li:hover{
+    color:red;
+    font-size: 26px;
+    
+    
+}
+.useselector:active{
+    color: blue;
+}
+.useselector:visited{
+    background-color: red;
+    @include liststyle($theme:green)
+}
+.useselector:hover{
+    background-color: red;
+
+}
+
+
+
+// grid system here and @media query
+.gridsystem .grideitems{
+    height: 100px;
+    background-color: green;
+    margin: 20px 0px
+}
+
+@media only screen and (max-width: 720px){
+    .gridsystem .grideitems{
+        height: 100px;
+        background-color: yellow;
+        margin: 20px 0px
+    }
+}
+@media only screen and (max-width: 500px){
+    .gridsystem .grideitems{
+        height: 100px;
+        background-color: blue;
+        margin: 20px 0px
+    }
+}
+
+
+
+
+
+
+
+// practice sass and scss
+$backgroundcolor:red;
+$border:10px;
+$fontsize:10px;
+
+
+.maindiv{
+    background-color: $backgroundcolor;
+    border:$border;
+    font-size: $fontsize
+}

@@ -1,0 +1,65 @@
+@import './scss/mystyle.sass';
+
+// variable######
+@width: 10px;
+@color:red;
+@height: @width + 10px;
+
+#manulists {
+  width: @width;
+  height: @height;
+  color:@color;
+}
+
+// mixing started######
+.bordered {
+    border-top: dotted 1px black;
+    border-bottom: solid 2px black;
+    border-radius:12px;
+  }
+
+  .maindiv{
+      .bordered()
+  }
+
+  //nestin#######
+  #header .maindiv {
+    color: black;
+    .navigation {
+      font-size: 12px;
+    }
+    .logo {
+      width: 300px;
+    }
+  }
+
+
+//   @media#########
+.component {
+    width: 300px;
+    @media (min-width: 768px) {
+      width: 600px;
+      @media  (min-resolution: 192dpi) {
+        background-image: url(/img/retina2x.png);
+      }
+    }
+    @media (min-width: 1280px) {
+      width: 800px;
+    }
+  }
+
+
+//   function and bundle
+#bundal(){
+    .mainbutton{
+        border-color: red;
+        background-color: aliceblue;
+        &:hover{
+            border-color: green;
+        }
+    }
+}
+
+.backbutton{
+    #bundal.button();
+}
